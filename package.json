@@ -6,15 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alikahwaji/react-web-project.git"
-  },
+  "repository": "git+https://github.com/alikahwaji/react-web-project.git",
   "keywords": [],
-  "author": "",
+  "author": "<ali.kahwaji@hotmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/alikahwaji/react-web-project/issues"
   },
-  "homepage": "https://github.com/alikahwaji/react-web-project#readme"
+  "homepage": "https://github.com/alikahwaji/react-web-project#readme",
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1"
+  }
 }
