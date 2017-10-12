@@ -4,18 +4,23 @@ console.log('App.js is running');
 
 //JSX - JavaScript XML
 
+var appObj = {
+    title: 'Kahwaji web app',
+    subtitle: 'Welcome to my page'
+};
+
 var template = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'Things Book App developed by Ali Kahwaji'
+        appObj.title
     ),
     React.createElement(
         'p',
         null,
-        'This is some info'
+        appObj.subtitle
     ),
     React.createElement(
         'ol',
@@ -33,25 +38,33 @@ var template = React.createElement(
     )
 );
 
+var user = {
+    name: 'Ali ',
+    age: 37,
+    location: 'Auckland'
+};
+
 var templateTwo = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'Ali Kahwaji'
+        user.name
     ),
     React.createElement(
         'p',
         null,
-        'Age: 37'
+        'Age: ',
+        user.age
     ),
     React.createElement(
         'p',
         null,
-        'Location: Auckland'
+        'Location: ',
+        user.location
     )
 );
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
