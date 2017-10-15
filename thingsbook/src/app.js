@@ -24,15 +24,17 @@ var user = {
     location: 'Auckland'
 }
 
-function getLocation() {
-    return 'Unkown'
+function getLocation(location) {
+    if(location) {
+        return <p>location: {location}</p>
+    } 
 }
 
 var templateTwo = (
     <div>
-        <h1>{user.name}</h1>
+        <h1>{user.name ? user.name : 'Anonymous'}</h1>
         <p>Age: {user.age}</p>
-        <p>Location: {getLocation(user.location)}</p>
+        {getLocation(user.location)}
     </div>
 )
 var appRoot = document.getElementById('app')
