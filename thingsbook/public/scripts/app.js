@@ -7,7 +7,7 @@ console.log('App.js is running');
 var appObj = {
     title: 'Kahwaji web app',
     subtitle: 'Welcome to my page',
-    options: ['one', 'two']
+    options: ['One', 'Two']
 };
 
 var template = React.createElement(
@@ -18,10 +18,15 @@ var template = React.createElement(
         null,
         appObj.title
     ),
-    React.createElement(
+    appObj.subtitle && React.createElement(
         'p',
         null,
         appObj.subtitle
+    ),
+    React.createElement(
+        'p',
+        null,
+        appObj.options.length > 0 ? 'Here are your options' : 'No options'
     ),
     React.createElement(
         'ol',
@@ -74,4 +79,4 @@ var templateTwo = React.createElement(
 );
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);

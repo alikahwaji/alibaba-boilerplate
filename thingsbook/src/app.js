@@ -5,13 +5,14 @@ console.log('App.js is running')
 var appObj = {
     title: 'Kahwaji web app',
     subtitle: 'Welcome to my page',
-    options: ['one','two']
+    options: ['One', 'Two']
 }
 
 var template = (
 <div>
     <h1>{appObj.title}</h1> 
-    <p>{appObj.subtitle}</p>
+    {appObj.subtitle && <p>{appObj.subtitle}</p>}
+    <p>{appObj.options.length > 0 ? 'Here are your options' : 'No options'}</p>
     <ol>
         <li>item one</li>
         <li>item two</li>
@@ -40,4 +41,4 @@ var templateTwo = (
 )
 var appRoot = document.getElementById('app')
 
-ReactDOM.render(templateTwo, appRoot)
+ReactDOM.render(template, appRoot)
