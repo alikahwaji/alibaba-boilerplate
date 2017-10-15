@@ -6,7 +6,8 @@ console.log('App.js is running');
 
 var appObj = {
     title: 'Kahwaji web app',
-    subtitle: 'Welcome to my page'
+    subtitle: 'Welcome to my page',
+    options: ['one', 'two']
 };
 
 var template = React.createElement(
@@ -63,7 +64,7 @@ var templateTwo = React.createElement(
         null,
         user.name ? user.name : 'Anonymous'
     ),
-    React.createElement(
+    user.age && user.age >= 18 && React.createElement(
         'p',
         null,
         'Age: ',
