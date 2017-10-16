@@ -1,82 +1,30 @@
 'use strict';
 
-console.log('App.js is running');
-
-//JSX - JavaScript XML
-
-var appObj = {
-    title: 'Kahwaji web app',
-    subtitle: 'Welcome to my page',
-    options: ['One', 'Two']
+var square = function square(x) {
+    return x * x;
 };
 
-var template = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        appObj.title
-    ),
-    appObj.subtitle && React.createElement(
-        'p',
-        null,
-        appObj.subtitle
-    ),
-    React.createElement(
-        'p',
-        null,
-        appObj.options.length > 0 ? 'Here are your options' : 'No options'
-    ),
-    React.createElement(
-        'ol',
-        null,
-        React.createElement(
-            'li',
-            null,
-            'item one'
-        ),
-        React.createElement(
-            'li',
-            null,
-            'item two'
-        )
-    )
-);
-
-var user = {
-    name: 'Ali ',
-    age: 37,
-    location: 'Auckland'
+var squareArrow = function squareArrow(x) {
+    return x * x;
 };
 
-function getLocation(location) {
-    if (location) {
-        return React.createElement(
-            'p',
-            null,
-            'location: ',
-            location
-        );
+var squareArrowTwo = function squareArrowTwo(x) {
+    return x * x;
+}; //exprations functions
+
+
+var getFirstName = function getFirstName(fullName) {
+    if (fullName) {
+        return fullName.split(' ')[0];
     }
-}
+};
 
-var templateTwo = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        user.name ? user.name : 'Anonymous'
-    ),
-    user.age && user.age >= 18 && React.createElement(
-        'p',
-        null,
-        'Age: ',
-        user.age
-    ),
-    getLocation(user.location)
-);
-var appRoot = document.getElementById('app');
+var getFirstNameNow = function getFirstNameNow(fullName) {
+    return fullName.split(' ')[0];
+};
 
-ReactDOM.render(template, appRoot);
+console.log(square(8));
+console.log(squareArrow(5));
+console.log(squareArrowTwo(4));
+console.log(getFirstName('Ali Kahwaji'));
+console.log(getFirstNameNow('Mike Jon'));
