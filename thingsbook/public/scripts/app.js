@@ -1,30 +1,45 @@
 'use strict';
 
-var square = function square(x) {
-    return x * x;
+// arugments object - no longer bound with function
+
+var add = function add(a, b) {
+    console.log(arguments);
+    return a + b;
 };
 
-var squareArrow = function squareArrow(x) {
-    return x * x;
+var AddTwo = function AddTwo(a, b) {
+    return a + b;
 };
 
-var squareArrowTwo = function squareArrowTwo(x) {
-    return x * x;
-}; //exprations functions
+console.log(add(1, 2));
+console.log(AddTwo(3, 4));
 
+// this keyword - no longer bound
 
-var getFirstName = function getFirstName(fullName) {
-    if (fullName) {
-        return fullName.split(' ')[0];
+var user = {
+    name: 'Mike',
+    cities: ['Dubai', 'KL', 'Auckland'],
+    printPlacesLived: function printPlacesLived() {
+        var _this = this;
+
+        return this.cities.map(function (city) {
+            return _this.name + ' has lived in ' + city + '!';
+        });
     }
 };
 
-var getFirstNameNow = function getFirstNameNow(fullName) {
-    return fullName.split(' ')[0];
+console.log(user.printPlacesLived());
+
+var multiplier = {
+    numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    multiplyBy: 2,
+    multiply: function multiply() {
+        var _this2 = this;
+
+        return this.numbers.map(function (number) {
+            return _this2.multiplyBy * number;
+        });
+    }
 };
 
-console.log(square(8));
-console.log(squareArrow(5));
-console.log(squareArrowTwo(4));
-console.log(getFirstName('Ali Kahwaji'));
-console.log(getFirstNameNow('Mike Jon'));
+console.log(multiplier.multiply());
