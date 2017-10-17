@@ -1,45 +1,107 @@
 'use strict';
 
-// arugments object - no longer bound with function
+console.log('App.js is running');
 
-var add = function add(a, b) {
-    console.log(arguments);
-    return a + b;
+//JSX - JavaScript XML
+
+var appObj = {
+    title: 'Kahwaji web app',
+    subtitle: 'Welcome to my page',
+    options: ['One', 'Two']
 };
 
-var AddTwo = function AddTwo(a, b) {
-    return a + b;
+var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        appObj.title
+    ),
+    appObj.subtitle && React.createElement(
+        'p',
+        null,
+        appObj.subtitle
+    ),
+    React.createElement(
+        'p',
+        null,
+        appObj.options.length > 0 ? 'Here are your options' : 'No options'
+    ),
+    React.createElement(
+        'ol',
+        null,
+        React.createElement(
+            'li',
+            null,
+            'item one'
+        ),
+        React.createElement(
+            'li',
+            null,
+            'item two'
+        )
+    )
+);
+
+var count = 0;
+var addOne = function addOne() {
+    console.log('addOne');
+};
+var templateTwo = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        'Count: ',
+        count
+    ),
+    React.createElement(
+        'button',
+        { onClick: addOne },
+        '+1'
+    )
+);
+
+var minusOne = function minusOne() {
+    console.log('minuOne');
+};
+var templateMinus = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        'Count: ',
+        count
+    ),
+    React.createElement(
+        'button',
+        { onClick: minusOne },
+        '-1'
+    )
+);
+
+var reset = function reset() {
+    console.log('Reset');
 };
 
-console.log(add(1, 2));
-console.log(AddTwo(3, 4));
+var templateReset = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        'Reset button'
+    ),
+    React.createElement(
+        'button',
+        { onClick: reset },
+        'Reset button'
+    )
+);
 
-// this keyword - no longer bound
+var appRoot = document.getElementById('app');
 
-var user = {
-    name: 'Mike',
-    cities: ['Dubai', 'KL', 'Auckland'],
-    printPlacesLived: function printPlacesLived() {
-        var _this = this;
-
-        return this.cities.map(function (city) {
-            return _this.name + ' has lived in ' + city + '!';
-        });
-    }
-};
-
-console.log(user.printPlacesLived());
-
-var multiplier = {
-    numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    multiplyBy: 2,
-    multiply: function multiply() {
-        var _this2 = this;
-
-        return this.numbers.map(function (number) {
-            return _this2.multiplyBy * number;
-        });
-    }
-};
-
-console.log(multiplier.multiply());
+ReactDOM.render(templateReset, appRoot);

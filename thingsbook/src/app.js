@@ -20,25 +20,42 @@ const template = (
 </div>
 )
 
-const user = {
-    name: 'Ali ',
-    age: 37,
-    location: 'Auckland'
+let count =0
+const addOne = () => {
+    console.log('addOne')
 }
-
-function getLocation(location) {
-    if(location) {
-        return <p>location: {location}</p>
-    } 
-}
-
 const templateTwo = (
     <div>
-        <h1>{user.name ? user.name : 'Anonymous'}</h1>
-        {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
-        {getLocation(user.location)}
+        <h1>Count: {count}</h1>
+        <button onClick={addOne}>+1</button>
+    </div>
+
+)
+
+const minusOne = () => {
+    console.log('minuOne')
+}
+const templateMinus = (
+    <div>
+        <h1>Count: {count}</h1>
+        <button onClick={minusOne}>-1</button>
     </div>
 )
+
+const reset = () => {
+    console.log('Reset')
+}
+
+const templateReset = (
+    <div>
+        <h1>Reset button</h1>
+        <button onClick={reset}>Reset button</button>
+    </div>
+)
+
+
+
+
 const appRoot = document.getElementById('app')
 
-ReactDOM.render(template, appRoot)
+ReactDOM.render(templateReset, appRoot)
