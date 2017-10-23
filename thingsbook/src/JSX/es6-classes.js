@@ -29,10 +29,28 @@ class Student extends Person {
     }
 }
 
-const me = new Student('Mike Jack', 26, 'Computer Sciance')
+class Traveler extends Person {
+    constructor(name, age, city){
+        super(name, age)
+        this.city = city 
+    }
+    fromCity() {
+        return !!this.city
+    }
+    getGretting() {
+        let greeting = super.getGretting()
 
-console.log(me.getDescription())
+        if(this.fromCity()){
+            greeting += ` Im visiting from ${this.city}`
+        }
+        return greeting
+    }
+}
 
-const other = new Student()
-console.log(other.getDescription())
+const me = new Traveler('Mike Jack', 26, 'Auckland')
+
+console.log(me.getGretting())
+
+const other = new Traveler()
+console.log(other.getGretting())
 
