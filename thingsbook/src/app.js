@@ -1,10 +1,13 @@
 class ThingsToDoApp extends React.Component {
     render() {
+        const title = 'ThingsToDoApp'
+        const subtitle = 'Put your plans in the app'
+        const options = ['Thing one', 'Thing two', 'Thing three', 'Thing four']
         return (
             <div>
-                <Header />
+                <Header title={title} subtitle={subtitle}/>
                 <Action />
-                <Options />
+                <Options options={options}/>
                 <AddOption />
             </div>
         )
@@ -15,8 +18,8 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                <h1>Things to do</h1>
-                <h2>Put your plans in the app</h2>
+                <h1>{this.props.title}</h1>
+                <h2>{this.props.subtitle}</h2>
             </div>
         )
     }
@@ -36,8 +39,9 @@ class Options extends React.Component {
     render() {
         return(
             <div>
-                <h2>Options Components here</h2>
-                <Option />
+                {
+                    this.props.options.map((option) => <Option key={option} optionText={option}/>)
+                }
             </div>
         )
     }
@@ -47,7 +51,7 @@ class Option extends React.Component {
     render() {
         return(
             <div>
-                Option component here
+                Option: {this.props.optionText}
             </div>
         )
     }
