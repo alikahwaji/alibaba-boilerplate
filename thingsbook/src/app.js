@@ -1,67 +1,50 @@
-console.log('App.js is running')
-
-//JSX - JavaScript XML
-
-const app = {
-    title: 'Kahwaji web app',
-    subtitle: 'Welcome to my page',
-    options: []
-}
-
-const onFormSubmit = (e) => {
-    e.preventDefault()
-
-    const option = e.target.elements.option.value
-
-    if(option) {
-        app.options.push(option)
-        e.target.elements.option.value = ''
-        render()
+class Header extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>Things to do</h1>
+                <h2>Put your plans in the app</h2>
+            </div>
+        )
     }
 }
 
-const makeDecision = (e) => {
-    const randomNum = Math.floor(Math.random() * app.options.length)
-    const option = app.options[randomNum]
-    alert(option)
-}
-
-const removeAll = (e) => {
-    e.preventDefault()
-
-    app.options = []
-    render()
-
-}
-
-
-const appRoot = document.getElementById('app')
-
-
-
-const render = () => {
-    const template = (
-        <div>
-            <h1>{app.title}</h1> 
-            {app.subtitle && <p>{app.subtitle}</p>}
-            <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
-            <button disabled={app.options.length === 0}onClick={makeDecision}>What Should I do?</button>
-            <button onClick = {removeAll}>Remove All</button>
-            <ol>
-            {
-                app.options.map((option) => {
-                    return <li key={option}>{option}</li>
-                })
-            }
-            </ol>
-            <form onSubmit={onFormSubmit}>
-                <input type="text" name="option" />
-                <button>Add option</button>
-            </form>
-        </div>
+class Action extends React.Component {
+    render() {
+        return (
+            <div>
+                <button>What should I do </button>
+            </div>
         )
-        ReactDOM.render(template, appRoot)
-
+    }
 }
 
-render()
+class Options extends React.Component {
+    render() {
+        return(
+            <div>
+                <h2>Otions Components here</h2>
+            </div>
+        )
+    }
+}
+
+class AddOption extends React.Component {
+    render() {
+        return (
+            <div>
+                <h2>Add button here</h2>
+            </div>
+        )
+    }
+}
+const jsx = (
+    <div>
+        <Header />
+        <Action />
+        <Options />
+        <AddOption />
+    </div>
+)
+
+ReactDOM.render(jsx, document.getElementById('app'))
