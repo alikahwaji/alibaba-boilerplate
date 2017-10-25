@@ -141,38 +141,38 @@ var Action = function Action(props) {
 //     }
 // }
 
-var Options = function (_React$Component2) {
-    _inherits(Options, _React$Component2);
 
-    function Options() {
-        _classCallCheck(this, Options);
+var Options = function Options(props) {
+    return React.createElement(
+        'div',
+        null,
+        React.createElement(
+            'button',
+            { onClick: props.handleDeleteOptions },
+            'Remove All'
+        ),
+        props.options.map(function (option) {
+            return React.createElement(Option, { key: option, optionText: option });
+        })
+    );
+};
 
-        return _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).apply(this, arguments));
-    }
+// class Options extends React.Component {
+//     render() {
+//         return(
+//             <div>
+//                 <button onClick={this.props.handleDeleteOptions}>Remove All</button>
+//                 {
+//                     this.props.options.map((option) => <Option key={option} optionText={option}/>)
+//                 }
 
-    _createClass(Options, [{
-        key: 'render',
-        value: function render() {
-            return React.createElement(
-                'div',
-                null,
-                React.createElement(
-                    'button',
-                    { onClick: this.props.handleDeleteOptions },
-                    'Remove All'
-                ),
-                this.props.options.map(function (option) {
-                    return React.createElement(Option, { key: option, optionText: option });
-                })
-            );
-        }
-    }]);
+//             </div>
+//         )
+//     }
+// }
 
-    return Options;
-}(React.Component);
-
-var Option = function (_React$Component3) {
-    _inherits(Option, _React$Component3);
+var Option = function (_React$Component2) {
+    _inherits(Option, _React$Component2);
 
     function Option() {
         _classCallCheck(this, Option);
@@ -195,19 +195,19 @@ var Option = function (_React$Component3) {
     return Option;
 }(React.Component);
 
-var AddOption = function (_React$Component4) {
-    _inherits(AddOption, _React$Component4);
+var AddOption = function (_React$Component3) {
+    _inherits(AddOption, _React$Component3);
 
     function AddOption(props) {
         _classCallCheck(this, AddOption);
 
-        var _this4 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
+        var _this3 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
 
-        _this4.handleAddOption = _this4.handleAddOption.bind(_this4);
-        _this4.state = {
+        _this3.handleAddOption = _this3.handleAddOption.bind(_this3);
+        _this3.state = {
             error: undefined
         };
-        return _this4;
+        return _this3;
     }
 
     _createClass(AddOption, [{
