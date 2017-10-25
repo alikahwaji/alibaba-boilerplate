@@ -36,11 +36,11 @@ class ThingsToDoApp extends React.Component {
         })
     }
     render() {
-        const title = 'ThingsToDoApp'
+        
         const subtitle = 'Put your plans in the app'
         return (
             <div>
-                <Header title={title} subtitle={subtitle}/>
+                <Header  subtitle={subtitle}/>
                 <Action 
                 hasOptions={this.state.options.length > 0}
                 handlePick ={this.handlePick}
@@ -61,10 +61,14 @@ const Header = (props) => {
     return (
         <div>
             <h1>{props.title}</h1>
-            <h2>{props.subtitle}</h2>
+            {props.subtitle && <h2>{props.subtitle}</h2>}
         </div>
     )
 
+}
+
+Header.defaultProps = {
+    title: 'ThingsToDoApp'
 }
 
 // class Header extends React.Component {

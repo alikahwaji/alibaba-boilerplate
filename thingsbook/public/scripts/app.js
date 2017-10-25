@@ -59,12 +59,12 @@ var ThingsToDoApp = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var title = 'ThingsToDoApp';
+
             var subtitle = 'Put your plans in the app';
             return React.createElement(
                 'div',
                 null,
-                React.createElement(Header, { title: title, subtitle: subtitle }),
+                React.createElement(Header, { subtitle: subtitle }),
                 React.createElement(Action, {
                     hasOptions: this.state.options.length > 0,
                     handlePick: this.handlePick
@@ -92,7 +92,7 @@ var Header = function Header(props) {
             null,
             props.title
         ),
-        React.createElement(
+        props.subtitle && React.createElement(
             'h2',
             null,
             props.subtitle
@@ -100,18 +100,21 @@ var Header = function Header(props) {
     );
 };
 
-// class Header extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <h1>{this.props.title}</h1>
-//                 <h2>{this.props.subtitle}</h2>
-//             </div>
-//         )
-//     }
-// }
+Header.defaultProps = {
+    title: 'ThingsToDoApp'
 
-var Action = function Action(props) {
+    // class Header extends React.Component {
+    //     render() {
+    //         return (
+    //             <div>
+    //                 <h1>{this.props.title}</h1>
+    //                 <h2>{this.props.subtitle}</h2>
+    //             </div>
+    //         )
+    //     }
+    // }
+
+};var Action = function Action(props) {
     return React.createElement(
         'div',
         null,
