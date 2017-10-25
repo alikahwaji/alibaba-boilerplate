@@ -68,20 +68,34 @@ class Header extends React.Component {
     }
 }
 
-class Action extends React.Component {
-    render() {
-        return (
-            <div>
-                <button 
-                onClick={this.props.handlePick}
-                disabled={!this.props.hasOptions}
-                >
-                What should I do 
-                </button>
-            </div>
-        )
-    }
+const Action = (props) => {
+    return (
+        <div>
+            <button 
+            onClick={props.handlePick}
+            disabled={!props.hasOptions}
+            >
+            What should I do 
+            </button>
+        </div>
+    )
+
 }
+
+// class Action extends React.Component {
+//     render() {
+//         return (
+//             <div>
+//                 <button 
+//                 onClick={this.props.handlePick}
+//                 disabled={!this.props.hasOptions}
+//                 >
+//                 What should I do 
+//                 </button>
+//             </div>
+//         )
+//     }
+// }
 
 class Options extends React.Component {
     render() {
@@ -141,5 +155,14 @@ class AddOption extends React.Component {
         )
     }
 }
+
+// const User = (props) => {
+//     return (
+//         <div>
+//         <p>Name: {props.name}</p>
+//         <p>Age: {props.age}</p>
+//         </div>
+//     )
+// }
 
 ReactDOM.render(<ThingsToDoApp />, document.getElementById('app'))
