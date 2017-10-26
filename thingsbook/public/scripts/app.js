@@ -215,9 +215,7 @@ var AddOption = function (_React$Component2) {
             var error = this.props.handleAddOption(option);
 
             this.setState(function () {
-                return {
-                    error: error
-                };
+                return { error: error };
             });
         }
     }, {
