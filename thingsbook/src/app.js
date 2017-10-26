@@ -5,7 +5,7 @@ class ThingsToDoApp extends React.Component {
         this.handlePick = this.handlePick.bind(this)
         this.handleAddOption = this.handleAddOption.bind(this)
         this.state = {
-            options: []
+            options: props.options
         }
     }
 
@@ -55,6 +55,10 @@ class ThingsToDoApp extends React.Component {
             </div>
         )
     }
+}
+
+ThingsToDoApp.defaultProps = {
+    options: []
 }
 
 const Header = (props) => {
