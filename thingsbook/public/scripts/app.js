@@ -48,10 +48,7 @@ var ThingsToDoApp = function (_React$Component) {
                 return 'This option already exists';
             }
             this.setState(function (prevState) {
-
-                return {
-                    options: prevState.options.concat(option)
-                };
+                return { options: prevState.options.concat(option) };
             });
         }
     }, {
