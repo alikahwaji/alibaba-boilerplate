@@ -1,12 +1,17 @@
 // console.log('utils.js is running')
-
 // export const square = (x) => {
 //   return x * x
 // }
 
 // export const add = (a, b) => a + b
 
-// export {square, add}
+// const sub = (a, b) => {
+//   return a - b 
+// }
+
+// export default (a, b) => a - b
+
+// export {square, add, sub as default}
 // exports - default export - named export
 
 export const isAdult = (x) => {
@@ -24,3 +29,12 @@ export const canDrink = (x) => {
     return false
   }
 }
+const isSenior = (x) => {
+  if (x >= 64) {
+    return true
+  } else {
+    return false
+  }
+}
+
+export default isSenior
