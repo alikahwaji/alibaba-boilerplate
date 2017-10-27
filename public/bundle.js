@@ -977,6 +977,14 @@ var _Option = __webpack_require__(33);
 
 var _Option2 = _interopRequireDefault(_Option);
 
+var _Action = __webpack_require__(34);
+
+var _Action2 = _interopRequireDefault(_Action);
+
+var _Header = __webpack_require__(35);
+
+var _Header2 = _interopRequireDefault(_Header);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1075,8 +1083,8 @@ var ThingsToDoApp = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(Header, { subtitle: subtitle }),
-        _react2.default.createElement(Action, {
+        _react2.default.createElement(_Header2.default, { subtitle: subtitle }),
+        _react2.default.createElement(_Action2.default, {
           hasOptions: this.state.options.length > 0,
           handlePick: this.handlePick
         }),
@@ -1097,42 +1105,6 @@ var ThingsToDoApp = function (_React$Component) {
 
 ThingsToDoApp.defaultProps = {
   options: []
-};
-
-var Header = function Header(props) {
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'h1',
-      null,
-      props.title
-    ),
-    props.subtitle && _react2.default.createElement(
-      'h2',
-      null,
-      props.subtitle
-    )
-  );
-};
-
-Header.defaultProps = {
-  title: 'ThingsToDoApp'
-};
-
-var Action = function Action(props) {
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'button',
-      {
-        onClick: props.handlePick,
-        disabled: !props.hasOptions
-      },
-      'What should I do'
-    )
-  );
 };
 
 var Options = function Options(props) {
@@ -1160,64 +1132,6 @@ var Options = function Options(props) {
 };
 
 _reactDom2.default.render(_react2.default.createElement(ThingsToDoApp, null), document.getElementById('app'));
-
-// class Header extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <h1>{this.props.title}</h1>
-//                 <h2>{this.props.subtitle}</h2>
-//             </div>
-//         )
-//     }
-// }
-// class Action extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <button 
-//                 onClick={this.props.handlePick}
-//                 disabled={!this.props.hasOptions}
-//                 >
-//                 What should I do 
-//                 </button>
-//             </div>
-//         )
-//     }
-// }
-
-// class Options extends React.Component {
-//     render() {
-//         return(
-//             <div>
-//                 <button onClick={this.props.handleDeleteOptions}>Remove All</button>
-//                 {
-//                     this.props.options.map((option) => <Option key={option} optionText={option}/>)
-//                 }
-
-//             </div>
-//         )
-//     }
-// }
-
-// class Option extends React.Component {
-//     render() {
-//         return(
-//             <div>
-//                 Option: {this.props.optionText}
-//             </div>
-//         )
-//     }
-// }
-
-// const User = (props) => {
-//     return (
-//         <div>
-//         <p>Name: {props.name}</p>
-//         <p>Age: {props.age}</p>
-//         </div>
-//     )
-// }
 
 /***/ }),
 /* 16 */
@@ -21540,6 +21454,80 @@ var Option = function Option(props) {
 };
 
 exports.default = Option;
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Action = function Action(props) {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'button',
+      {
+        onClick: props.handlePick,
+        disabled: !props.hasOptions
+      },
+      'What should I do'
+    )
+  );
+};
+
+exports.default = Action;
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Header = function Header(props) {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'h1',
+      null,
+      props.title
+    ),
+    props.subtitle && _react2.default.createElement(
+      'h2',
+      null,
+      props.subtitle
+    )
+  );
+};
+
+Header.defaultProps = {
+  title: 'ThingsToDoApp'
+};
+
+exports.default = Header;
 
 /***/ })
 /******/ ]);
