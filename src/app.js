@@ -1,6 +1,12 @@
-import validator from 'validator'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-console.log(validator.isEmail('test@gmail.com'))
+const template = React.createElement('p', {}, 'testing 123')
+ReactDOM.render(template, document.getElementById('app'))
+
+// import validator from 'validator'
+
+// console.log(validator.isEmail('test@gmail.com'))
 
 // import './utils'
 // import sub, {square, add} from './utils'
