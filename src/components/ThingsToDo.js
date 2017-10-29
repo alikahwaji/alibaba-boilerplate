@@ -3,10 +3,18 @@ import AddOption from './AddOption'
 import Options from './Options'
 import Action from './Action'
 import Header from './Header'
+import OptionModal from './OptionModal'
 
 class ThingsToDoApp extends React.Component {
   state = {
-    options: []
+    options: [],
+    selectedOption: undefined
+  }
+
+  handleClearSelectedOption = () => {
+    this.setState(() => ({
+      selectedOption: undefined
+    }))
   }
 
   handleDeleteOptions = () => {
@@ -22,7 +30,9 @@ class ThingsToDoApp extends React.Component {
   handlePick = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length)
     const option = this.state.options[randomNum]
-    alert(option)
+    this.setState(() => ({
+      selectedOption: option
+    }))
   }
   handleAddOption = (option) => {
     if (!option) {
@@ -74,13 +84,17 @@ class ThingsToDoApp extends React.Component {
         <AddOption
           handleAddOption={this.handleAddOption}
         />
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          handleClearSelectedOption = {this.handleClearSelectedOption}
+         />
       </div>
     )
   }
 }
 
-ThingsToDoApp.defaultProps = {
-  options: []
-}
+// ThingsToDoApp.defaultProps = {
+//   options: []
+// }
 
 export default ThingsToDoApp
