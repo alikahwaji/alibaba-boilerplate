@@ -10,7 +10,7 @@ const Header = (props) => (
 )
 
 Header.defaultProps = {
-  title: 'ThingsToDoApp'
+  title: 'ThingsToDo'
 }
 
 export default Header

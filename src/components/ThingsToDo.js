@@ -68,7 +68,7 @@ class ThingsToDoApp extends React.Component {
   }
   
   render () {
-    const subtitle = 'Put your plans in the app'
+    const subtitle = 'Put your plans in action'
     return (
       <div>
         <Header subtitle={subtitle}/>
