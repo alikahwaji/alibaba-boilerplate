@@ -4,9 +4,9 @@ A  React and React-Router boilerplate with it's webpack and package.json, boiler
 
 To run the app:
 
-yarn install
+1- yarn install
 
-yarn run dev-server
+2- yarn run dev-server
 
 Enjoy!
 
