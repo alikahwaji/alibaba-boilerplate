@@ -8,6 +8,10 @@ To run the app:
 
 2- yarn run dev-server
 
+///////////////
+Version 2.0 will be ready end of December 
+/////////////////
+
 Enjoy!
 
 
